@@ -3,7 +3,7 @@ import { Header } from "./header";
 import { PersonalInfo } from "./personal-info";
 import { ReposUser } from "./repos-user";
 
-export const Gabriel = ({
+export const Body = ({
   handleChange,
   getUser,
   fetching,
@@ -38,15 +38,19 @@ export const Gabriel = ({
             paddingY="32px"
           >
             {!!userInfo && <PersonalInfo userInfo={userInfo} />}
-            {!!userInfo && reposUser.length > 0 && <ReposUser reposUser={reposUser} />}
-            <Button
+            {!!userInfo && reposUser.length > 0 && <ReposUser
+              display='flex'
+              flexDirection={"column"}
+              reposUser={reposUser}
+            />}
+            {!!userInfo && <Button
               fontSize={"10px"}
               w={"6%"}
               h={"24px"}
               bg={"#525964"}
               _hover={{ color: 'black', bg: 'gray.200' }}
               onClick={setPage}
-            >next</Button>
+            >next</Button>}
           </Flex>
         </VStack>
       </Flex>

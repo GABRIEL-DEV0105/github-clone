@@ -1,9 +1,8 @@
 import { useToast } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { Gabriel } from "./components/gabriel";
+import { Body } from "./components/body";
 
-const urlGithubApi = 'https://api.github.com/users'
-const range = 6
+const range = 10
 const initialPage = 1
 
 export function App() {
@@ -21,7 +20,7 @@ export function App() {
 
   const getUser = async () => {
     if (nickName.length > 0) {
-      const response = await fetch(`${urlGithubApi}/${nickName}`);
+      const response = await fetch(`https://api.github.com/users/${nickName}`);
 
       if (response.status === 200) {
         const data = await response.json();
@@ -48,14 +47,14 @@ export function App() {
 
   const handleEnter = (el) => {
     if (nickName.length > 0) {
-      const enter = ['NumpadEnter','Enter']
+      const enter = ['NumpadEnter', 'Enter']
       if (enter.includes(el.code)) handleSubmit()
     }
   }
 
   const handlePage = () => {
     if (page < totalPage) setPage((prevState) => prevState + 1)
-   }
+  }
 
   useEffect(() => {
     const getRepos = async () => {
@@ -76,13 +75,13 @@ export function App() {
     if (reposUser.length > 0) {
       setTotalPage(Math.ceil(reposUser.length / range))
     }
-    if (reposUser.length > 0 ) setReposSlice(reposUser.slice(init, end))
+    if (reposUser.length > 0) setReposSlice(reposUser.slice(init, end))
   }, [reposUser, page])
 
-  
+
 
   return (
-    <Gabriel
+    <Body
       handleChange={handleChange}
       getUser={handleSubmit}
       fetching={fetching}
@@ -94,4 +93,3 @@ export function App() {
     />
   )
 }
-
