@@ -2,5 +2,5 @@
 
 
 <p align="center">
-  <img width='640' height="360"  src="src/assets/gif.gif"/>
+  <img width='640' height="340"  src="src/assets/gif.gif"/>
 </p>
