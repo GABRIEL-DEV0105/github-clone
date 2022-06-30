@@ -3,7 +3,7 @@ import { Header } from "./header";
 import { PersonalInfo } from "./personal-info";
 import { ReposUser } from "./repos-user";
 
-export const Body = ({
+export const Main = ({
   handleChange,
   getUser,
   fetching,
@@ -14,7 +14,7 @@ export const Body = ({
   setPage
 }) => {
   return (
-    <Box w="100vw" h="100vh" bg="#0a0c10">
+    <Box w="100vw" h="100vh" bg="#0a0c10" p="32px">
       <Flex
         alignItems="flex-start"
         justifyContent="center"

@@ -1,6 +1,6 @@
 import { useToast } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { Body } from "./components/body";
+import { Main } from "./components/main";
 
 const range = 10
 const initialPage = 1
@@ -81,7 +81,7 @@ export function App() {
 
 
   return (
-    <Body
+    <Main
       handleChange={handleChange}
       getUser={handleSubmit}
       fetching={fetching}
