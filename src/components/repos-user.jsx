@@ -3,6 +3,8 @@ import { Flex, Grid, GridItem, Text } from "@chakra-ui/react";
 export const ReposUser = ({ reposUser }) => (
   <Flex
     w={"100%"}
+    maxH="520px"
+    minH="520px"
     flexDirection={"column"}
     alignItems={"end"}
     p="40px">

@@ -43,15 +43,16 @@ export const Main = ({
               flexDirection={"column"}
               reposUser={reposUser}
             />}
-            {!!userInfo && <Button
-              fontSize={"10px"}
-              w={"6%"}
-              h={"24px"}
-              bg={"#525964"}
-              _hover={{ color: 'black', bg: 'gray.200' }}
-              onClick={setPage}
-            >next</Button>}
           </Flex>
+          {reposUser.length === 10 && <Button
+            flex="columns"
+            fontSize={"10px"}
+            w={"6%"}
+            h={"24px"}
+            bg={"#525964"}
+            _hover={{ color: 'black', bg: 'gray.200' }}
+            onClick={setPage}
+          >next</Button>}
         </VStack>
       </Flex>
     </Box>
